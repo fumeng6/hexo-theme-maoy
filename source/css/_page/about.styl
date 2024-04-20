@@ -1,0 +1,255 @@
+// // 原始样式隐藏
+// body[body-type='about'] #content-inner {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: stretch;  // 确保垂直方向上占满父元素
+// }
+
+// body[body-type='about'] #page,
+// [data-theme="dark"] body[body-type='about'] #page  {
+//   border: none;         /* 移除边框 */
+//   margin: 0;            /* 移除外边距 */
+//   padding: 0;           /* 移除内边距 */
+//   background: none;     /* 移除背景 */
+//   box-shadow: none;     /* 移除阴影 */
+//   width: 100%;          /* 宽度根据内容自动调整 */
+//   height: 100%;         /* 高度根据内容自动调整 */
+//   backdrop-filter: none; /* 背景滤镜 */
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   flex 1;
+// }
+
+// body[body-type='about'] #page .page-title {
+//   display: none;
+// }
+
+// body[body-type='about'] .layout {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// body[body-type='about'] .layout.hide-aside {
+//     max-width: none;
+//     max-height: none;
+// }
+
+// // 卡片基本样式
+// @keyframes floatcard {
+//   0% {
+//     transform: translate(0px, 0px);
+//   }
+//   25% {
+//     transform: translate(-10px, -10px);
+//   }
+//   50% {
+//     transform: translate(10px, 10px);
+//   }
+//   75% {
+//     transform: translate(-10px, 10px);
+//   }
+//   100% {
+//     transform: translate(0px, 0px);
+//   }
+// }
+
+// .card {
+//   padding-top: 0;
+//   padding-bottom: 0;
+//   padding-left: 20px;
+//   padding-right: 20px; 
+//   text-align: center;
+//   font-size: 1.2rem;
+//   line-height: 1.5;
+//   margin: 20px;
+//   transition: all 0.1s ease-in-out;
+//   background: var(--trans-light);
+//   backdrop-filter: var(--backdrop-filter);
+//   border-radius: 25px;
+//   border: var(--border-style);
+//   animation: floatcard 10s infinite ease-in-out;
+// }
+// [data-theme="dark"] .card {
+//   background: var(--trans-dark);
+// }
+// .card:hover {
+//   box-shadow: 0 1px 2px rgba(0,0,0,1);
+// }
+// // 页面样式
+// #about-page {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   height: auto;
+//   width: 100%;
+// }
+
+// .about-top {
+//   display: flex;
+//   align-items: center; /*使内容垂直居中*/
+//   justify-content: center; /*使内容水平居中*/
+// }
+
+// .left-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+//   max-width: 30%;
+//   min-width: 20%;
+// }
+// .avatar {
+//   top:50%;
+//   width: 30%; /* 可以根据需要调整大小 */
+//   height: auto;
+//   border-radius: 50%; /* 如果需要圆形头像 */
+// }
+// .right-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   max-width: 30%;
+//   min-width: 20%;
+// }
+
+// .description.card{
+//   width: 50%;
+//   height: auto;
+//   animation: none;
+// }
+
+
+// .card.left1  {
+//   margin-left: 40px;
+//   margin-right: 0px;
+// }
+// .card.left2  {
+  
+// }
+// .card.left3  {
+//   margin-left: 40px
+//   margin-right: 0px;
+// }
+
+// .card.right1  {
+//   margin-left: 0px;
+//   margin-right: 40px;
+// }
+// .card.right2  {
+  
+// }
+// .card.right3  {
+//   margin-left: 0px
+//   margin-right: 40px;
+// }
+// Variables
+
+
+// Keyframes for card floating animation
+@keyframes floatcard
+  0%
+    transform: translate(0px, 0px)
+  25%
+    transform: translate(-10px, -10px)
+  50%
+    transform: translate(10px, 10px)
+  75%
+    transform: translate(-10px, 10px)
+  100%
+    transform: translate(0px, 0px)
+
+// Base page styles
+body[body-type='about']
+  #content-inner
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
+  #page
+    border: none
+    margin: 0
+    padding: 0
+    background: none
+    box-shadow: none
+    width: 100%
+    height: 100%
+    backdrop-filter: none
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    flex: 1
+
+  #page .page-title
+    display: none
+
+  .layout
+    margin: 0
+    padding: 0
+
+  .layout.hide-aside
+    max-width: none
+    max-height: none
+
+// Card styles
+.card
+  padding-top: 0
+  padding-bottom: 0
+  padding-left: 20px
+  padding-right: 20px
+  text-align: center
+  font-size: 1.2rem
+  line-height: 1.5
+  margin: 20px
+  transition: all 0.1s ease-in-out
+  background: var(--trans-light)
+  backdrop-filter: var(--backdrop-filter)
+  border-radius: 25px
+  border: var(--border-style)
+  animation: floatcard 10s infinite ease-in-out
+
+  &:hover
+    box-shadow: 0 1px 2px rgba(0,0,0,1)
+
+  [data-theme="dark"] &
+    background: var(--trans-dark)
+
+.card.left1, .card.left3
+  margin-left: 40px
+  margin-right: 0px
+
+.card.right1, .card.right3
+  margin-left: 0px
+  margin-right: 40px
+// Additional page layout adjustments
+#about-page
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  height: auto
+  width: 100%
+
+.about-top
+  display: flex
+  align-items: center
+  justify-content: center
+
+.left-container, .right-container
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  max-width: 30%
+  min-width: 20%
+
+.avatar
+  width: 30%
+  height: auto
+  border-radius: 50%
+
+.description.card
+  width: 50%
+  height: auto
+  animation: none

@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    style.
+      html, body {
+        overflow: hidden;
+      }      
+    script.
+      window.ga = window.ga || function() {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+  body
+    div#page-info(type-info=page.type style="display: none;")
+    //- div#play-page
+    canvas
+    .promo
+      .promo-middle
+        .promo-content
+          .promo-header
+            span.promo-close &times;
+          .promo-body
+            p Try Fluid Simulation app!
+            .links-container
+              a.link#apple_link(target='_blank')
+                img.link-img(alt='Download on the App Store', src='app_badge.png')
+              a.link#google_link(target='_blank')
+                img.link-img(alt='Get it on Google Play', src='gp_badge.png')
+    script(src='/js/dat.gui.min.js')
+    script(src='/js/fluid.js')

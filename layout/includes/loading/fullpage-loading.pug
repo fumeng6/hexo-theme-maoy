@@ -1,0 +1,35 @@
+//- 旋转彩虹 及其显示隐藏js逻辑
+#loading-box
+  .loader
+    .loader-inner
+      - var i = 0
+      while i < 5
+        .loader-line-wrap
+          .loader-line
+        - i++
+
+//- script.
+//-   const preloader = {
+//-     endLoading: () => {
+//-       document.body.style.overflow = 'auto';
+//-       document.getElementById('loading-box').classList.add("loaded");
+//-     },
+//-     initLoading: () => {
+//-       document.body.style.overflow = '';
+//-       document.getElementById('loading-box').classList.remove("loaded");
+//-     }
+//-   };
+  
+//-   document.addEventListener('DOMContentLoaded', () => {
+//-     if (document.readyState === "complete" || document.readyState === "loaded" || document.readyState === "interactive") {
+//-       preloader.endLoading();
+//-     } else {
+//-       window.addEventListener('load', preloader.endLoading);
+//-     }
+//-   });
+
+//-   // 以下是PJAX逻辑，仅当你的站点实际使用了PJAX时才需要
+//-   if (theme.pjax && theme.pjax.enable) {
+//-     document.addEventListener('pjax:send', preloader.initLoading);
+//-     document.addEventListener('pjax:complete', preloader.endLoading);
+//-   }

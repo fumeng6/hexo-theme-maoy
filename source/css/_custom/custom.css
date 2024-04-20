@@ -1,0 +1,527 @@
+/* 颜色 */
+:root {
+  --theme-color: rgb(102, 204, 255);
+  --blue-custom: #5ea6e5;
+  --loading-color: rgba(207, 246, 247, 0.92);
+  --border-color: #c9c9c9;
+  --color-red: rgb(241, 71, 71);
+  --color-orange: rgb(241, 162, 71);
+  --color-yellow: rgb(241, 238, 71);
+  --color-purple: rgb(179, 71, 241);
+  --color-blue: rgb(102, 204, 255);
+  --color-gray: rgb(226, 226, 226);
+  --color-green: rgb(57, 197, 187);
+  --color-whitegray: rgb(241, 241, 241);
+  --color-pink: rgb(237, 112, 155);
+  --color-black: rgb(0, 0, 0);
+  --color-darkblue: rgb(97, 100, 159);
+  --color-heoblue: rgb(66, 90, 239);
+  --btn-bg: var(--theme-color) !important;
+  --scrollbar-color: var(--theme-color) !important;
+  --border-style: 1px solid rgba(169, 169, 169, 0.7);
+  --hlnumber-bg: #282c34;
+  --hltools-bg: #1c1c1c;
+  --hl-bg: #282c34;
+  /* 页面透明度、模糊度（亚克力效果） */
+  --trans-light: rgba(255, 255, 255, 0.6);
+  --trans-dark: rgba(25, 25, 25, 0.3);
+  --border-style: 1px solid rgb(169, 169, 169);
+  --backdrop-filter: blur(5px) saturate(150%);
+}
+
+/* =========== 网站一图流魔改 =========== */
+/* 页脚与头图透明 */
+#footer {
+  background: transparent !important;
+}
+#page-header {
+  background: transparent !important;
+}
+
+/* 白天模式遮罩透明 */
+#footer::before {
+  background: transparent !important;
+}
+#page-header::before {
+  background: transparent !important;
+}
+
+/* 夜间模式遮罩透明 */
+[data-theme="dark"] #footer::before {
+  background: transparent !important;
+}
+[data-theme="dark"] #page-header::before {
+  background: transparent !important;
+}
+/* =========== 导航栏魔改 =========== */
+
+/* ------- 导航栏显示调整 ------- */
+/* 一级菜单居中 */
+#nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* 左中右三列布局 */
+  align-items: center; /* 纵向居中 */
+  padding: 0 10px;
+}
+
+#blog-info {
+  text-align: left; /* 确保文字左对齐 */
+}
+/* 微调logo上下居中 */
+.site-icon {
+  margin-top: -5px 
+}
+#menus {
+  /* 使 #menus_items 在 #menus 内居中 */
+  display: flex; /* 使用 Flexbox 在此容器内布局 */
+  justify-content: center; /* Flexbox 居中对齐 */
+  align-items: center; /* Flexbox 居中对齐 */
+}
+
+#nav-right {
+  /* 用 Flexbox 确保内容向右对齐 */
+  display: flex;
+  justify-content: flex-end; /* 内容靠右 */
+}
+
+
+/* 子菜单横向展示 */
+#nav .menus_items .menus_item:hover .menus_item_child {
+  display: flex !important;
+}
+/* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
+.menus_items .menus_item:nth-child(2) .menus_item_child {
+  left: -125px;
+}
+/* 导航栏项目底部蓝色线条动画去除 */
+#nav *::after{
+    background-color: transparent!important;
+}
+
+/* ------- 导航栏常驻 ------- */
+.nav-fixed #nav{
+    transform: translateY(58px)!important;
+    -webkit-transform: translateY(58px)!important;
+    -moz-transform: translateY(58px)!important;
+    -ms-transform: translateY(58px)!important;
+    -o-transform: translateY(58px)!important;
+}
+#nav{
+    transition: none!important;
+    -webkit-transition: none!important;
+    -moz-transition: none!important;
+    -ms-transition: none!important;
+    -o-transition: none!important;
+}
+
+/* 导航栏菜单项字体调整 */
+.site-page {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* ------- 导航栏显示标题 ------- */
+#page-name::before {
+  font-size: 18px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  color: white !important;
+  top: 0;
+  left: 0;
+  content: "回到顶部";
+  background-color: var(--theme-color);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  opacity: 0;
+  box-shadow: 0 0 3px var(--theme-color);
+  line-height: 45px; /*如果垂直位置不居中可以微调此值，也可以删了*/
+}
+#page-name:hover:before {
+  opacity: 1;
+}
+#name-container {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+#name-container:hover {
+  scale: 1.03;
+}
+#page-name {
+  font-weight: bold;
+  position: relative;
+  padding: 10px 30px; /*如果文字间隔不合理可以微调修改，第二个是水平方向的padding，第一个是垂直的*/
+}
+#nav{
+    padding: 0 20px;
+}
+
+/* =========== 首页魔改 =========== */
+
+
+/* ------- 翻页按钮居中 ------- */
+#pagination {
+  width: 100%;
+  margin: auto;
+}
+.page-number.current {
+background-color: var(--theme-color)!important;
+}
+/* ------- 霓虹灯效果 ------- */
+/* 日间模式不生效 */
+[data-theme="light"] .site-name,
+[data-theme="light"] #site-title,
+[data-theme="light"] #site-subtitle,
+[data-theme="light"] #page-name,
+[data-theme="light"] #post-info {
+  animation: none;
+}
+/* 夜间模式生效 */
+[data-theme="dark"] .site-name,
+[data-theme="dark"] #site-title {
+  animation: light_15px 10s linear infinite;
+}
+[data-theme="dark"] #site-subtitle {
+  animation: light_10px 10s linear infinite;
+}
+[data-theme="dark"] #page-name {
+  animation: light_10px 10s linear infinite;
+}
+[data-theme="dark"] #post-info {
+  animation: light_5px 10s linear infinite;
+}
+/* 关键帧描述 */
+@keyframes light_15px {
+  0% {
+    text-shadow: #5636ed 0 0 15px;
+  }
+  12.5% {
+    text-shadow: #11ee5e 0 0 15px;
+  }
+  25% {
+    text-shadow: #f14747 0 0 15px;
+  }
+  37.5% {
+    text-shadow: #f1a247 0 0 15px;
+  }
+  50% {
+    text-shadow: #f1ee47 0 0 15px;
+  }
+  50% {
+    text-shadow: #b347f1 0 0 15px;
+  }
+  62.5% {
+    text-shadow: #002afa 0 0 15px;
+  }
+  75% {
+    text-shadow: #ed709b 0 0 15px;
+  }
+  87.5% {
+    text-shadow: #39c5bb 0 0 15px;
+  }
+  100% {
+    text-shadow: #5636ed 0 0 15px;
+  }
+}
+
+@keyframes light_10px {
+  0% {
+    text-shadow: #5636ed 0 0 10px;
+  }
+  12.5% {
+    text-shadow: #11ee5e 0 0 10px;
+  }
+  25% {
+    text-shadow: #f14747 0 0 10px;
+  }
+  37.5% {
+    text-shadow: #f1a247 0 0 10px;
+  }
+  50% {
+    text-shadow: #f1ee47 0 0 10px;
+  }
+  50% {
+    text-shadow: #b347f1 0 0 10px;
+  }
+  62.5% {
+    text-shadow: #002afa 0 0 10px;
+  }
+  75% {
+    text-shadow: #ed709b 0 0 10px;
+  }
+  87.5% {
+    text-shadow: #39c5bb 0 0 10px;
+  }
+  100% {
+    text-shadow: #5636ed 0 0 10px;
+  }
+}
+
+@keyframes light_5px {
+  0% {
+    text-shadow: #5636ed 0 0 5px;
+  }
+  12.5% {
+    text-shadow: #11ee5e 0 0 5px;
+  }
+  25% {
+    text-shadow: #f14747 0 0 5px;
+  }
+  37.5% {
+    text-shadow: #f1a247 0 0 15px;
+  }
+  50% {
+    text-shadow: #f1ee47 0 0 5px;
+  }
+  50% {
+    text-shadow: #b347f1 0 0 5px;
+  }
+  62.5% {
+    text-shadow: #002afa 0 0 5px;
+  }
+  75% {
+    text-shadow: #ed709b 0 0 5px;
+  }
+  87.5% {
+    text-shadow: #39c5bb 0 0 5px;
+  }
+  100% {
+    text-shadow: #5636ed 0 0 5px;
+  }
+}
+
+/* ------- 黑夜星空背景 ------- */
+#universe{
+  display: block;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* 这个是调置顶的优先级的，-1在文章页下面，背景上面，个人推荐这种 */
+  z-index: -1;
+}
+
+/* 头像呼吸灯 */
+[data-theme="light"] .avatar-img {
+  animation: huxi_light 4s ease-in-out infinite;
+}
+[data-theme="dark"] .avatar-img {
+  animation: huxi_dark 4s ease-in-out infinite;
+}
+@keyframes huxi_light {
+  0% {
+    box-shadow: 0px 0px 1px 1px #e9f5fa;
+  }
+  50% {
+    box-shadow: 0px 0px 5px 5px #e9f5fa;
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #e9f5fa;
+  }
+}
+@keyframes huxi_dark {
+  0% {
+    box-shadow: 0px 0px 1px 1px #39c5bb;
+  }
+  50% {
+    box-shadow: 0px 0px 5px 5px #39c5bb;
+  }
+  100% {
+    box-shadow: 0px 0px 1px 1px #39c5bb;
+  }
+}
+/* =========== 整站视觉元素魔改 =========== */
+
+/* ------- 页面样式 ------- */
+/* 侧边栏个人信息卡片 */
+#aside-content > .card-widget.card-info {
+  background:  var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border-radius: 25px;
+  border: var(--border-style);
+}
+
+/* 黑夜模式适配 */
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background: var(--trans-dark);
+}
+
+/* 首页文章卡片 */
+#recent-posts > .recent-post-item {
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border-radius: 25px;
+  border: var(--border-style);
+}
+
+/* 首页侧栏卡片 */
+#aside-content .card-widget {
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border-radius: 18px;
+  border: var(--border-style);
+}
+
+/* 文章页、归档页、普通页面 */
+div#post,
+div#page,
+div#archive {
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+  border: var(--border-style);
+  border-radius: 20px;
+}
+
+/* 导航栏 */
+#page-header.nav-fixed #nav {
+  background: var(--trans-light);
+  backdrop-filter: var(--backdrop-filter);
+}
+
+[data-theme="dark"] #page-header.nav-fixed #nav {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 夜间模式遮罩 */
+[data-theme="dark"] #recent-posts > .recent-post-item,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] div#post,
+[data-theme="dark"] div#archive,
+[data-theme="dark"] div#page {
+  background: var(--trans-dark);
+}
+
+/* 阅读模式 */
+.read-mode #aside-content .card-widget {
+  background: rgba(158, 204, 171, 0.5) !important;
+}
+.read-mode div#post {
+  background: rgba(158, 204, 171, 0.5) !important;
+}
+
+/* 夜间模式下的阅读模式 */
+[data-theme="dark"] .read-mode #aside-content .card-widget {
+  background: rgba(25, 25, 25, 0.9) !important;
+  color: #ffffff;
+}
+[data-theme="dark"] .read-mode div#post {
+  background: rgba(25, 25, 25, 0.9) !important;
+  color: #ffffff;
+}
+
+/* 多彩图标引入 */
+svg.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* 版权信息卡片美化 */
+.post-copyright {
+  border: 1px solid #ddd; /* 添加边框 */
+  padding: 15px; /* 添加内边距 */
+  border-radius: 30px; /* 圆角 */
+  box-shadow: 0 2px 5px rgba(0,0,0,1); /* 轻微阴影 */
+  margin-top: 20px; /* 与文章内容留出一些间距 */
+}
+
+.post-copyright i {
+  color: #3498db; /* 改变图标颜色 */
+}
+.post-copyright-meta, .post-copyright-info {
+  font-size: 16px; /* 字体大小 */
+  line-height: 1.5; /* 行高 */
+}
+
+.post-copyright a {
+  color: #3498db; /* 链接颜色 */
+  text-decoration: none; /* 移除下划线 */
+}
+.post-copyright a:hover {
+  text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+
+.post-copyright {
+  display: flex;
+  flex-direction: column; /* 使内容垂直排列 */
+  gap: 10px; /* 元素间隔 */
+}
+
+@media (max-width: 768px) {
+  /* 在小屏幕设备上的样式调整 */
+  .post-copyright {
+    padding: 10px;
+    font-size: 14px; /* 调整字体大小 */
+  }
+}
+
+/* 打赏区美化 */
+/* 美化按钮 */
+.reward-button {
+  padding: 10px 20px; /* 内边距 */
+  border-radius: 10px; /* 圆角边框 */
+  margin: 10px 0; /* 上下间距 */
+  box-shadow: 0 2px 5px rgba(0,0,0,1); /* 轻微阴影 */
+  transition: background-color 0.3s; /* 过渡动画 */
+}
+
+/* 美化二维码展示区域 */
+.reward-main {
+  text-align: center; /* 使二维码居中显示 */
+}
+
+.reward-all {
+  list-style: none; /* 移除列表前的小圆点 */
+  padding: 0; /* 移除默认的内边距 */
+  display: inline-block; /* 使列表居中 */
+}
+
+.reward-item {
+  display: inline-block; /* 横向排列 */
+  margin: 0 10px; /* 两边的间距 */
+}
+
+.post-qr-code-img {
+  width: 200px; /* 设置二维码图片的宽度 */
+  height: auto; /* 高度自动，保持宽高比 */
+  border: 1px solid #ddd; /* 图片边框 */
+  border-radius: 5px; /* 图片圆角 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 图片阴影 */
+}
+
+.post-qr-code-desc {
+  color: #666; /* 描述文字颜色 */
+  font-size: 14px; /* 描述文字大小 */
+  margin-top: 5px; /* 描述文字和图片间距 */
+}
+
+/* 各级标题图标美化 */
+@keyframes breathing-effect {
+  0%, 100% {
+    transform: scale(1); /* 初始状态和动画结束时元素的尺寸（原始尺寸） */
+  }
+  50% {
+    transform: scale(2); /* 动画中间状态元素的尺寸（稍微放大） */
+  }
+}
+.title-prefix-icon {
+  display: inline-block; /* 确保transform属性有效 */
+  animation: breathing-effect 2s infinite; /* 应用动画，每2秒循环一次 */
+}
+
+/* 日夜切换动画 */

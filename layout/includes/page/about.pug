@@ -1,0 +1,41 @@
+//- //- 设定页面类型为about
+//- div#page-info(type-info=page.type style="display: none;")
+//- div#about-page
+//-   div.about-top
+//-     div.left-container
+//-       div.card.left1
+//-         p=theme.about_info.age
+//-       div.card.left2
+//-         p=theme.about_info.address
+//-       div.card.left3
+//-         p=theme.about_info.character
+//-     img.avatar(src='https://tuchuang.voooe.cn/images/2024/04/17/avatar.webp' alt='Your Avatar')
+//-     div.right-container
+//-       div.card.right1
+//-         p=theme.about_info.favorite
+//-       div.card.right2
+//-         p=theme.about_info.speciality
+//-       div.card.right3
+//-         p=theme.about_info.current_situation
+//-   div.description.card
+//-     p=theme.about_info.description
+//- 使用mixin来定义复用的卡片结构
+mixin card(info, className)
+  .card(class=className)
+    p=info
+
+//- 设定页面类型为about
+div#page-info(type-info=page.type style="display: none;")
+div#about-page
+  div.about-top
+    div.left-container
+      +card(theme.about_info.age, 'left1')
+      +card(theme.about_info.address, 'left2')
+      +card(theme.about_info.character, 'left3')
+    img.avatar(src='https://tuchuang.voooe.cn/images/2024/04/17/avatar.webp' alt='Your Avatar')
+    div.right-container
+      +card(theme.about_info.favorite, 'right1')
+      +card(theme.about_info.speciality, 'right2')
+      +card(theme.about_info.current_situation, 'right3')
+  div.description.card
+    p=theme.about_info.description
