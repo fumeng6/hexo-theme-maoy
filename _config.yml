@@ -171,6 +171,7 @@ rightside_bottom: # 默认单位：px
 # --------------------------------------
 # 内容设置 #
 # --------------------------------------
+# 关于页面 #
 about_info:
   description: "欢迎来到猫野的博客，很高兴认识你🙂"
   age: "2000-至今"
@@ -578,20 +579,21 @@ fancybox: true
 # --------------------------------------
 # 附加功能
 # --------------------------------------
+
 # 插入外部代码
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 # css文件一般在head引入，js文件一般在bottom里引入，特殊情况除外
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+
 
   bottom:
     # - <script src="xxxx"></script>
-    - <canvas id="universe"></canvas>
-    - <script src="/js/custom.js"></script>
-    - <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script> # jQuery依赖
-    - <script async src="//at.alicdn.com/t/c/font_4350076_c9gr1i4v1ps.js"></script>  # symbol方式引入iconfont 
+    # - <canvas id="universe"></canvas>
+    # - <script src="/js/custom.js"></script>
+    # - <script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script> # jQuery依赖
+    # - <script async src="//at.alicdn.com/t/c/font_4350076_c9gr1i4v1ps.js"></script>  # symbol方式引入iconfont 
     # - <script async data-pjax src="/js/musicplayer.js"></script>
 
     # - <div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
